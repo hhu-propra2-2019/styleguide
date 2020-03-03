@@ -1,0 +1,25 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install node modules
+        run: npm install
+      - name: Run gulp
+        run: gulp
+      - name: Build jar file
+        run: gradle jar
+      - name: Publish
+        uses: peter-evans/s3-backup@v1
+        env:
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          MIRROR_SOURCE: build/repo/
+          MIRROR_TARGET: public/mops/
+          STORAGE_SERVICE_URL: https://s3.cs.hhu.de
+          STORAGE_SERVICE_ALIAS: minio
