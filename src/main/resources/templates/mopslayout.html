@@ -6,7 +6,7 @@
   <title th:text="'Mops' + (${name} ? ' - ' + ${name} : '')">Mops</title>
   <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{css/bootstrap.min.css}">
   <link href="../static/css/icono.min.css" rel="stylesheet" th:href="@{css/icono.min.css}">
-  <link href="../static/css/styles.min.css" rel="stylesheet" th:href="@{css/styles.min.css}">
+  <link href="../static/css/styles.css" rel="stylesheet" th:href="@{css/styles.css}">
   <th:block th:if="${headcontent}" th:replace="${headcontent} ?: ~{}"></th:block>
 </head>
 <body>
@@ -18,7 +18,7 @@
   <i class="icon icon-sidebar icon-sidebar-show icono-hamburger"></i>
   <i class="icon icon-sidebar icon-navigation-primary-show icono-caretLeft" th:if="${navigation}"></i>
   <i class="icon icon-sidebar icon-sidebar-hide icono-cross"></i>
-  <a class="brand" href="/">
+  <a class="brand" href="#">
     <h1 th:text="'Mops' + (${name} ? ' - ' + ${name} : '')">Mops</h1>
   </a>
   <form class="form form-search" method="get">
@@ -135,7 +135,7 @@
       <div class="account-name">
         <small th:if="${account}" th:text="${account} ? 'Angemeldet als' : ''">Angemeldet als</small>
         <span
-            th:text="${account} ? (${account.name} ? ${#strings.abbreviate(account.name, 30)} : 'Unbekannt') : 'Anmelden'">Name</span>
+          th:text="${account} ? (${account.name} ? ${#strings.abbreviate(account.name, 30)} : 'Unbekannt') : 'Anmelden'">Name</span>
         <small th:if="${account}"
                th:text="${account} ? (${#lists.size(account.roles)} ? 'in ' + (${#lists.size(account.roles)} == 1 ? 'der Rolle' : 'den Rollen') + ' ' + ${#strings.abbreviate(#strings.setJoin(account.roles, ', '), 30)} : 'in keinen Rollen') : 'in keinen Rollen'">in
           den Rollen ...</small>

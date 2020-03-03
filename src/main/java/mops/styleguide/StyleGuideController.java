@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 public class StyleGuideController {
     @GetMapping("/")
     public String index() {
-        return "mopsstyleguide";
+        return "index";
     }
 
     @GetMapping("/logout")
