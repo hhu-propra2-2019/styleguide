@@ -1,0 +1,25 @@
+name: Heroku Deployment
+
+on:
+  push:
+    branches:
+      - heroku
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+      - name: Install node modules
+        run: npm install
+      - name: Run gulp
+        run: gulp
+      - name: Build JAR
+        run: gradle bootJar
+      - name: Heroku Stuff
+        run: |
+          heroku login
