@@ -18,6 +18,7 @@ configurations {
 task dist(type: Jar) {
     exclude('application.properties', '**/index.html', '**/*.scss', 'static/css/atoms', 'static/css/particles')
     from([file("./src/main/resources")].collect { it.isDirectory() ? it : zipTree(it) })
+    destinationDirectory = file("$rootDir/build/repo/${project.group}/${project.name}/${project.version}/")
 }
 
 repositories {
