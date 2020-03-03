@@ -6,7 +6,7 @@ Ihr könnt dieses Repository klonen und eigene Änderungen per Pull Request an u
 schicken. Auch könnt ihr eigene Links zu euren Subsystemen einpflegen, wenn ihr
 das möchtet.
 
-Eine Live-Demo findet ihr unter http://mops.style
+Eine Live-Demo findet ihr unter http://mopsstyle.herokuapp.com/
 
 Eine Demoanwendung, die diesen Styleguide implementiert, ist die
 [Keycloak-Demo](https://github.com/hhu-propra2/keycloak-demo).
