@@ -16,7 +16,7 @@ jobs:
       - name: Run gulp
         run: gulp
       - name: Build jar file
-        run: gradle jar
+        run: gradle dist
       - name: Publish
         uses: peter-evans/s3-backup@v1
         env:
