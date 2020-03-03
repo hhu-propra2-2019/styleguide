@@ -141,8 +141,8 @@
           den Rollen ...</small>
       </div>
     </a>
-    <div class="account-logout-wrapper">
-      <a class="account-logout" href="/logout" th:href="@{/logout}" th:if="${account}">Abmelden</a>
+    <div class="account-logout-wrapper" th:if="${account}">
+      <a class="account-logout" href="/logout" th:href="@{/logout}">Abmelden</a>
     </div>
   </div>
   <span class="copyright" th:unless="${account}">© 2020 Mops</span>

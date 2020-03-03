@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{mopslayout :: html(name='Styleguide', headcontent=~{:: headcontent}, bodycontent=~{:: bodycontent})}"
+<html lang="en"
+      th:replace="~{mopslayout :: html(name='Styleguide', headcontent=~{:: headcontent}, bodycontent=~{:: bodycontent})}"
       xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
@@ -144,7 +145,7 @@ dependencies {
   </p>
   <ul>
     <li><code>name</code> (Name des Subsystems)</li>
-    <li><code>headcontent</code> (Fragment mit Links, Skripts, Styles und ggf. anderen Angaben im <code>head</code> der
+    <li><code>headcontent</code> (Fragment mit Links, Scripts, Styles und ggf. anderen Angaben im <code>head</code> der
       Seite)
     </li>
     <li><code>navigation (Fragment mit Links)</code></li>
