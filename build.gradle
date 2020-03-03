@@ -26,8 +26,6 @@ task dist(type: Jar) {
 bootJar {
     // run npm install
     gulp_default.dependsOn 'npmInstall'
-    // run gulp install
-    gulp_default.dependsOn 'installGulp'
     // processResources is a Java task. Run the gulpfile.js before this task using the 'default' task in the gulpfile.js
     processResources.dependsOn gulp_default
 }
