@@ -53,40 +53,25 @@ body {
     box-shadow: 0 3px 6px 0 color.change(particles.$color-darkgray, $alpha: 0.16);
     z-index: 1000;
 
-    > .form.form-search {
-      position: absolute;
-      right: $header-main-padding-x;
+    .form-search-wrapper {
+      background: particles.$color-white;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, particles.$color-white $header-main-padding-x * 2);
+      padding-left: $header-main-padding-x * 3;
       display: flex;
-      justify-content: center;
       align-items: center;
-      flex-wrap: nowrap;
-      flex-direction: row-reverse;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      top: 0;
 
-      .icon {
-        position: absolute;
-        top: 50%;
-        flex-shrink: 0;
-        flex-grow: 0;
-        transform: translateY(-50%);
-        margin: 0;
-
-        &o-cross {
-          transform: translateY(-50%) rotate(45deg);
-          right: calc(#{$header-main-padding-x} + (#{$button-icon-width} - 30px) / 2);
-        }
-
-        &o-search {
-          right: calc(#{$header-main-padding-x} + (#{$button-icon-width} - 6px) / 2);
-          transform: scale(0.75) rotate(45deg) translateY(-100%);
-        }
-      }
-
-      .textfield-search-wrapper {
-        background: particles.$color-white;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, particles.$color-white $header-main-padding-x * 2);
-        padding-left: $header-main-padding-x * 3;
+      .form.form-search {
+        position: relative;
+        margin-right: $header-main-padding-x;
         display: flex;
+        justify-content: center;
         align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
       }
     }
 
@@ -163,27 +148,19 @@ body {
         }
       }
 
-      &-form-search {
-        right: 0;
+      &-form-search-toggle {
+        position: static;
+        right: auto;
+        transform: none;
 
-        &-hide {
-          position: static;
-          right: auto;
-          transform: none;
-
-          &:checked {
-            ~ .icon-form-search-hide {
-              display: none;
-            }
-
-            ~ .textfield-search-wrapper {
-              display: none;
-            }
-          }
+        ~ .icon-form-search-hide, ~ .textfield-search {
+          display: none;
         }
 
-        &-show:checked {
-          z-index: 1;
+        &:checked {
+          ~ .icon-form-search-hide, ~ .textfield-search {
+            display: block;
+          }
 
           ~ .icon-form-search-show {
             display: none;
@@ -248,7 +225,7 @@ body {
       }
     }
 
-    > .icon {
+    .icon {
       position: absolute;
       top: 50%;
       flex-shrink: 0;
@@ -256,26 +233,28 @@ body {
       transform: translateY(-50%);
       margin: 0;
 
-      &-sidebar {
-        left: $header-main-padding-x;
-      }
-
-      &-form-search {
-        right: $header-main-padding-x;
-      }
-
-      &o-cross {
+      &-sidebar-hide {
         transform: translateY(-50%) rotate(45deg);
         left: calc(#{$header-main-padding-x} + (#{$button-icon-width} - 30px) / 2);
       }
 
-      &o-caretLeft {
+      &-navigation-primary-show {
         transform: translateY(-50%) rotate(180deg);
         left: calc(#{$header-main-padding-x} + (#{$button-icon-width} - 12px) / 2);
       }
 
-      &o-hamburger {
+      &-sidebar-show {
         left: calc(#{$header-main-padding-x} + (#{$button-icon-width} - 20px) / 2);
+      }
+
+      &-form-search-show {
+        transform: scale(0.75) rotate(45deg) translateY(-100%);
+        right: calc((#{$button-icon-width} - 6px) / 2);
+      }
+
+      &-form-search-hide {
+        transform: translateY(-50%) rotate(45deg);
+        right: calc((#{$button-icon-width} - 30px) / 2);
       }
     }
 
@@ -482,23 +461,9 @@ body {
 
         .account-logout {
           font-size: particles.$font-size-small;
-          padding: $footer-main-padding-x;
+          margin-right: $footer-main-padding-x;
         }
       }
     }
   }
-}
-
-.z-index-1000 {
-  z-index: 1000;
-}
-
-img.img-square {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-}
-
-.shadow-right-sm {
-  box-shadow: .125rem 0 .25rem rgba(0, 0, 0, .075) !important;
 }
