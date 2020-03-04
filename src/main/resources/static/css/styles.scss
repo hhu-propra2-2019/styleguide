@@ -40,8 +40,9 @@ $transition-duration: 0.3s;
 
 body {
   .header.header-main:first-child {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     height: $header-main-height;
     padding: $header-main-padding-y $header-main-padding-x;
     display: flex;
@@ -312,8 +313,7 @@ body {
       width: $sidebar-width;
       transform: translateX(0);
       transition: transform $transition-duration ease-out;
-      overflow-x: hidden;
-      overflow-y: scroll;
+      overflow: hidden;
 
       @include large {
         transform: translateX(100%);
@@ -328,13 +328,17 @@ body {
         height: 100%;
         transition: transform $transition-duration ease-out;
         transform: translateX(0);
+        overflow: hidden;
 
         .navigation {
           width: $navigation-width;
           overflow-x: hidden;
+          overflow-y: auto;
 
           ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
             padding-inline-start: 0;
             padding-inline-end: 0;
             margin-block-start: 0;
@@ -392,7 +396,7 @@ body {
   }
 
   > .main-wrapper {
-    padding-top: 1rem;
+    padding-top: calc(1rem + #{$header-main-height});
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: calc(1rem + #{$footer-main-height});
@@ -404,8 +408,9 @@ body {
   }
 
   footer.footer.footer-main {
-    position: sticky;
+    position: fixed;
     bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

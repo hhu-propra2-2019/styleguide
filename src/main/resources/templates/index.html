@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      th:replace="~{mopslayout :: html(name='Styleguide', headcontent=~{:: headcontent}, bodycontent=~{:: bodycontent})}"
+      th:replace="~{mopslayout :: html(name='Styleguide', headcontent=~{:: headcontent}, navigation=~{:: navigation}, bodycontent=~{:: bodycontent})}"
       xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
@@ -154,8 +154,8 @@ dependencies {
     <li><code>headcontent</code> (Fragment mit Links, Scripts, Styles und ggf. anderen Angaben im <code>head</code> der
       Seite)
     </li>
-    <li><code>navigation (Fragment mit Links)</code></li>
-    <li><code>bodycontent (Fragment mit beliebigem Inhalt, der im <code>body</code> vorkommen kann)</code></li>
+    <li><code>navigation</code> (Fragment mit Links)</li>
+    <li><code>bodycontent</code> (Fragment mit beliebigem Inhalt, der im <code>body</code> vorkommen kann)</li>
   </ul>
   <p>
     Sämtliche Parameter sind optional. Es macht aber Sinn, manche (oder alle) zu setzen.
@@ -232,17 +232,15 @@ dependencies {
     einfach weggelassen werden.
   </p>
 
-  <h2 id="fragments">Account</h2>
+  <h2 id="account">Account</h2>
   <p>
-    Da wir mit Authentifizierung und Autorisierung arbeiten, sollte dem Benutzer die Möglichkeit gegeben werden, ein
-    sich an- und abzumelden,
-    sowie seine Daten einzusehen. Dies geschieht im Template mit einem DTO-Objekt. Alles was ihr tun müsst, ist in eurem
-    Projekt eine
-    Klasse Account anzulegen, die folgendermaßen aussieht:
+    Da wir mit Authentifizierung und Autorisierung arbeiten, sollte dem Benutzer die Möglichkeit gegeben werden, sich an- und abzumelden,
+    sowie seine Daten einzusehen. Dies geschieht im Template mit einem DTO. Alles was ihr tun müsst, ist in eurem
+    Projekt eine Klasse Account anzulegen, die folgendermaßen aussieht:
   </p>
   <pre>
       <code>
-class Account {
+public class Account {
     private final String name; // Name der angemeldeten Person
     private final String email; // E-Mail-Adresse
     private final String image; // Bild (kann für jeden null sein)
