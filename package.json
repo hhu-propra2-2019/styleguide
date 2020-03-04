@@ -1,7 +1,7 @@
 {
   "title": "Mops - Styleguide",
   "name": "styleguide",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Styleguide for Mops",
   "main": "gulpfile.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/hhu-propra2/styleguide.git"
   },
-  "homepage": "http://mops.style",
+  "homepage": "https://mops.style",
   "license": "ISC",
   "dependencies": {
     "@popperjs/core": "^2.0.6",
