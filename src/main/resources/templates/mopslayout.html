@@ -21,17 +21,17 @@
   <a class="brand" href="#">
     <h1 th:text="'Mops' + (${name} ? ' - ' + ${name} : '')">Mops</h1>
   </a>
-  <form class="form form-search" method="get">
-    <input checked class="button button-form-search button-form-search-hide" name="button-form-search" type="radio">
-    <input class="button button-form-search button-form-search-show" name="button-form-search" type="radio">
-    <i class="icon icon-form-search icon-form-search-hide icono-cross"></i>
-    <i class="icon icon-form-search icon-form-search-show icono-search"></i>
-    <div class="textfield-search-wrapper">
+  <div class="form-search-wrapper">
+    <form class="form form-search" method="get">
+      <input class="button button-form-search button-form-search-toggle" name="searchFormIsVisible" type="checkbox"
+             value="true" th:checked="${#bools.isTrue(#strings.toString(param.searchFormIsVisible))}">
+      <i class="icon icon-form-search icon-form-search-hide icono-cross"></i>
+      <i class="icon icon-form-search icon-form-search-show icono-search"></i>
       <input class="form-control textfield textfield-search" name="search" placeholder="Suchen..."
              th:value="${param.search} ?: ''"
              type="search">
-    </div>
-  </form>
+    </form>
+  </div>
   <div class="sidebar">
     <div class="navigation-wrapper">
       <nav class="navigation navigation-primary" is="mops-navigation">

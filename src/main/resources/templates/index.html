@@ -102,7 +102,7 @@ dependencies {
     </pre>
 
   <div class="alert alert-warning" role="alert">
-    <span class="font-weight-bold">Nicht einfach kopieren und ersetzen!</span> Ansonsten löscht ihr vielleicht aus
+    Nicht einfach kopieren und ersetzen! Ansonsten löscht ihr vielleicht aus
     Versehen die anderen Repositories und Dependencies.
   </div>
 
@@ -207,9 +207,8 @@ dependencies {
         </code>
     </pre>
   <div class="alert alert-warning" role="alert">
-    Es muss sich zwingend an den vorgegebenen Aufbau aller Fragmente (und Komponenten) gehalten werden! <span
-    class="font-weight-bold">Die Vorgabe
-        schließt auch die An- und Abwesenheit von Attributen mit ein.</span>
+    Es muss sich zwingend an den vorgegebenen Aufbau aller Fragmente (und Komponenten) gehalten werden! Die Vorgabe
+        schließt auch die An- und Abwesenheit von Attributen mit ein.
   </div>
   <p>
     Wie man daran erkennt, ist keine verschachtelte Liste möglich. Folglich existieren zu einem in der Navigation
@@ -233,7 +232,8 @@ dependencies {
 
   <h2 id="account">Account</h2>
   <p>
-    Da wir mit Authentifizierung und Autorisierung arbeiten, sollte dem Benutzer die Möglichkeit gegeben werden, sich an- und abzumelden,
+    Da wir mit Authentifizierung und Autorisierung arbeiten, sollte dem Benutzer die Möglichkeit gegeben werden, sich
+    an- und abzumelden,
     sowie seine Daten einzusehen. Dies geschieht im Template mit einem DTO. Alles was ihr tun müsst, ist in eurem
     Projekt eine Klasse Account anzulegen, die folgendermaßen aussieht:
   </p>
@@ -254,6 +254,21 @@ public class Account {
     bereitgestellt werden.
     Ausnahme: Ist kein Benutzer angemeldet, muss kein Account instanziiert werden.
   </p>
+
+  <h2 id="search">Suche</h2>
+  <p>
+    Die Suche ist oben rechts auf der Seite und kann sowohl per Klick, als auch per Parameter in der URL ein- und
+    ausgeblendet werden.
+    Letzteres ist möglich, indem man <code>searchFormIsVisible</code> setzt. Dabei gilt, dass das Formular genau dann
+    ausgeblendet wird, wenn <code>searchFormIsVisible == false</code> oder <code>searchFormIsVisible</code> als
+    Parameter nicht vorhanden ist.
+  </p>
+  <p>Die Suche selbst kann per Taste <code>ENTER</code> bestätigt werden. Der Wert ist dann in dem Parameter <code>search</code>
+    gespeichert.
+  </p>
+  <div class="alert alert-warning" role="alert">
+    Die Suche selbst bietet noch keinen Bereich, in dem Suchergebnisse gelistet werden. Dies muss im Fragment <code>bodycontent</code> geschehen.
+  </div>
 
   <h2 id="mops">Kennzeichnung von Komponenten</h2>
   <p>
