@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-  <title th:text="'Mops' + (${name} ? ' - ' + ${name} : '')">Mops</title>
+  <title th:text="'Mops' + (${title} ? ' - ' + ${title}  : (${name} ? ' - ' + ${name} : ''))">Mops</title>
   <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
   <link href="../static/css/icono.min.css" rel="stylesheet" th:href="@{/css/icono.min.css}">
   <link href="../static/css/styles.min.css" rel="stylesheet" th:href="@{/css/styles.min.css}">
