@@ -44,15 +44,15 @@
   <nav class="navigation navigation-secondary" is="mops-navigation" th:fragment="navigation">
     <ul>
       <li class="active">
-        <a href="#welcome" th:href="@{./#welcome}">Willkommen</a>
+        <a href="#welcome" th:href="@{./}">Willkommen</a>
       </li>
     </ul>
   </nav>
 </header>
 <main th:fragment="bodycontent">
   <div id="welcome">
-    <img alt="Elvis, der Anführer" class="img-fluid" src="../static/thumbs/elvis_young-small_main.jpg"
-         th:src="@{thumbs/elvis_young-small_main.jpg}">
+    <img alt="Elvis, der Anführer" class="img-fluid" src="../static/img/thumbs/elvis_young-small_main.jpg"
+         th:src="@{/img/thumbs/elvis_young-small_main.jpg}">
     <h2 class="font-weight-bold">
       Willkommen in der Welt<br>
       von Elvis, Mampfi, Pudding und co.!
