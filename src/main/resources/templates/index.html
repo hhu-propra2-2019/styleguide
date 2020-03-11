@@ -44,7 +44,7 @@
   <nav class="navigation navigation-secondary" is="mops-navigation" th:fragment="navigation">
     <ul>
       <li class="active">
-        <a href="#welcome" th:href="@{./#welcome}">Willkommen</a>
+        <a href="#welcome" th:href="@{./}">Willkommen</a>
       </li>
       <li>
         <a href="https://github.com/hhu-propra2/styleguide">
@@ -56,8 +56,8 @@
 </header>
 <main th:fragment="bodycontent">
   <div id="welcome">
-    <img alt="Elvis, der Anführer" class="img-fluid" src="../static/img/elvis_young.jpg"
-         th:src="@{img/elvis_young.jpg}">
+    <img alt="Elvis, der Anführer" class="img-fluid" src="../static/img/resized/elvis_young.jpg"
+         th:src="@{/img/resized/elvis_young.jpg}">
     <h2 class="font-weight-bold">
       Willkommen in der Welt<br>
       von Elvis, Mampfi, Pudding und co.!
