@@ -44,15 +44,20 @@
   <nav class="navigation navigation-secondary" is="mops-navigation" th:fragment="navigation">
     <ul>
       <li class="active">
-        <a href="#welcome" th:href="@{./#welcome}">Willkommen</a>
+        <a href="#welcome" th:href="@{./}">Willkommen</a>
+      </li>
+      <li>
+        <a href="https://github.com/hhu-propra2/styleguide">
+          Zum Repository
+        </a>
       </li>
     </ul>
   </nav>
 </header>
 <main th:fragment="bodycontent">
   <div id="welcome">
-    <img alt="Elvis, der Anführer" class="img-fluid" src="../static/img/elvis_young.jpg"
-         th:src="@{img/elvis_young.jpg}">
+    <img alt="Elvis, der Anführer" class="img-fluid" src="../static/img/resized/elvis_young.jpg"
+         th:src="@{/img/resized/elvis_young.jpg}">
     <h2 class="font-weight-bold">
       Willkommen in der Welt<br>
       von Elvis, Mampfi, Pudding und co.!
@@ -119,7 +124,7 @@ dependencies {
         <code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en" xmlns:th="http://www.thymeleaf.org"
-      th:replace="~{mopslayout :: html(name='Name des Subsystems', headcontent=~{:: headcontent}, navigation=~{:: navigation}, bodycontent=~{:: bodycontent})}"&gt;
+      th:replace="~{mopslayout :: html(name='Name des Subsystems', title='Optional: Tabtitel', headcontent=~{:: headcontent}, navigation=~{:: navigation}, bodycontent=~{:: bodycontent})}"&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;
   &lt;title&gt;Name des Subsystems&lt;/title&gt;
@@ -150,6 +155,7 @@ dependencies {
   </p>
   <ul>
     <li><code>name</code> (Name des Subsystems)</li>
+    <li><code>title</code> Optional: Eigener Name für eine Unterseite, wird im Titel angezeigt</li>
     <li><code>headcontent</code> (Fragment mit Links, Scripts, Styles und ggf. anderen Angaben im <code>head</code> der
       Seite)
     </li>
@@ -208,7 +214,7 @@ dependencies {
     </pre>
   <div class="alert alert-warning" role="alert">
     Es muss sich zwingend an den vorgegebenen Aufbau aller Fragmente (und Komponenten) gehalten werden! Die Vorgabe
-        schließt auch die An- und Abwesenheit von Attributen mit ein.
+    schließt auch die An- und Abwesenheit von Attributen mit ein.
   </div>
   <p>
     Wie man daran erkennt, ist keine verschachtelte Liste möglich. Folglich existieren zu einem in der Navigation
@@ -267,18 +273,9 @@ public class Account {
     gespeichert.
   </p>
   <div class="alert alert-warning" role="alert">
-    Die Suche selbst bietet noch keinen Bereich, in dem Suchergebnisse gelistet werden. Dies muss im Fragment <code>bodycontent</code> geschehen.
+    Die Suche selbst bietet noch keinen Bereich, in dem Suchergebnisse gelistet werden. Dies muss im Fragment <code>bodycontent</code>
+    geschehen.
   </div>
-
-  <h2 id="mops">Kennzeichnung von Komponenten</h2>
-  <p>
-    Jedem Tag <code>x</code> sollte das Attribut <code>is="mops-x"</code> angehangen werden. Beispiel:
-  </p>
-  <pre>
-    <code>
-&lt;nav ... is="mops-nav"&gt; ... &lt;/nav&gt;
-    </code>
-  </pre>
 </main>
 </body>
 </html>

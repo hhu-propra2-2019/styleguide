@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-  <title th:text="'Mops' + (${name} ? ' - ' + ${name} : '')">Mops</title>
+  <title th:text="'Mops' + (${title} ? ' - ' + ${title}  : (${name} ? ' - ' + ${name} : ''))">Mops</title>
   <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
   <link href="../static/css/icono.min.css" rel="stylesheet" th:href="@{/css/icono.min.css}">
   <link href="../static/css/styles.min.css" rel="stylesheet" th:href="@{/css/styles.min.css}">
@@ -50,67 +50,67 @@
         <ul>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/anna.jpg" th:src="@{/img/anna.jpg}" alt="">
+              <img src="../static/img/resized/anna.jpg" th:src="@{/img/resized/anna.jpg}" alt="">
               Feedback
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/babsi.jpg" th:src="@{/img/babsi.jpg}" alt="">
+              <img src="../static/img/resized/babsi.jpg" th:src="@{/img/resized/babsi.jpg}" alt="">
               Foren
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/dido.jpg" th:src="@{/img/dido.jpg}" alt="">
+              <img src="../static/img/resized/dido.jpg" th:src="@{/img/resized/dido.jpg}" alt="">
               Gruppenbildung
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/eminem.jpg" th:src="@{/img/eminem.jpg}" alt="">
+              <img src="../static/img/resized/eminem.jpg" th:src="@{/img/resized/eminem.jpg}" alt="">
               Java in der Praxis
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/fin.jpg" th:src="@{/img/fin.jpg}" alt="">
+              <img src="../static/img/resized/fin.jpg" th:src="@{/img/resized/fin.jpg}" alt="">
               Klausurzulassung
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/joghurt.jpg" th:src="@{/img/joghurt.jpg}" alt="">
+              <img src="../static/img/resized/joghurt.jpg" th:src="@{/img/resized/joghurt.jpg}" alt="">
               Korrektorinnen-bewerbung
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/ken.jpg" th:src="@{/img/ken.jpg}" alt="">
+              <img src="../static/img/resized/ken.jpg" th:src="@{/img/resized/ken.jpg}" alt="">
               Lernportfolios
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/mampfi.jpg" th:src="@{/img/mampfi.jpg}" alt="">
+              <img src="../static/img/resized/mampfi.jpg" th:src="@{/img/resized/mampfi.jpg}" alt="">
               Materialsammlung
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/mopsi.jpg" th:src="@{/img/mopsi.jpg}" alt="">
+              <img src="../static/img/resized/mopsi.jpg" th:src="@{/img/resized/mopsi.jpg}" alt="">
               Modulhandbuch
             </a>
           </li>
           <li>
             <a href="#" th:href="@{./}">
-              <img src="../static/img/nick.jpg" th:src="@{/img/nick.jpg}" alt="">
+              <img src="../static/img/resized/nick.jpg" th:src="@{/img/resized/nick.jpg}" alt="">
               Terminfindung
             </a>
           </li>
           <li>
             <a href="https://mops.style">
-              <img src="../static/img/peter.jpg" th:src="@{/img/peter.jpg}" alt="">
+              <img src="../static/img/resized/peter.jpg" th:src="@{/img/resized/peter.jpg}" alt="">
               Styleguide
             </a>
           </li>
@@ -142,8 +142,8 @@
 <footer class="footer footer-main">
   <div class="account">
     <a class="account-link" href="https://keycloak.cs.hhu.de/auth/realms/MOPS/account">
-      <img class="account-image" src="../static/img/elvis.jpg"
-           th:src="${account} ? (${account.image} ?: @{/img/elvis.jpg}) : @{/img/elvis.jpg}">
+      <img class="account-image" src="../static/img/resized/elvis.jpg"
+           th:src="${account} ? (${account.image} ?: @{/img/resized/elvis.jpg}) : @{/img/resized/elvis.jpg}">
       <div class="account-name">
         <small th:if="${account}" th:text="${account} ? 'Angemeldet als' : ''">Angemeldet als</small>
         <span
