@@ -11,19 +11,10 @@
 </head>
 <body>
 <header class="header header-main">
-  <label>
-    Hide sidebar
-    <input checked class="button button-sidebar button-sidebar-hide" name="button-sidebar" type="radio">
-  </label>
-  <label>
-    Hover toggle switch 
-    <input class="button button-sidebar button-navigation-primary-show" name="button-sidebar" th:if="${navigation}"
-           type="radio">
-  </label>
-  <label>
-    Show sidebar
-    <input class="button button-sidebar button-sidebar-show" name="button-sidebar" type="radio">
-  </label>
+  <input checked class="button button-sidebar button-sidebar-hide" name="button-sidebar" type="radio">
+  <input class="button button-sidebar button-navigation-primary-show" name="button-sidebar" th:if="${navigation}"
+         type="radio">
+  <input class="button button-sidebar button-sidebar-show" name="button-sidebar" type="radio">
   <i class="icon icon-sidebar icon-sidebar-show icono-hamburger"></i>
   <i class="icon icon-sidebar icon-navigation-primary-show icono-caretLeft" th:if="${navigation}"></i>
   <i class="icon icon-sidebar icon-sidebar-hide icono-cross"></i>
@@ -32,11 +23,8 @@
   </a>
   <div class="form-search-wrapper">
     <form class="form form-search" method="get">
-      <label>
-        Toggles search input field
-        <input class="button button-form-search button-form-search-toggle" name="searchFormIsVisible" type="checkbox"
-               value="true" th:checked="${#bools.isTrue(#strings.toString(param.searchFormIsVisible))}">
-      </label>
+      <input class="button button-form-search button-form-search-toggle" name="searchFormIsVisible" type="checkbox"
+             value="true" th:checked="${#bools.isTrue(#strings.toString(param.searchFormIsVisible))}">
       <i class="icon icon-form-search icon-form-search-hide icono-cross"></i>
       <i class="icon icon-form-search icon-form-search-show icono-search"></i>
       <input class="form-control textfield textfield-search" name="search" placeholder="Suchen..."
