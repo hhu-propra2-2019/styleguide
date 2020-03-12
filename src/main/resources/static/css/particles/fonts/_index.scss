@@ -18,6 +18,6 @@ $_weights: ("Thin": weights.$thin, "Light": weights.$light, "Regular": weights.$
     font-style: styles.$normal;
     font-weight: $_weight-integer;
     src: url("../fonts/roboto/Roboto-" + $_weight-string + ".ttf") format("truetype");
-    font-display: swap;
+    font-display: fallback;
     }
 }
