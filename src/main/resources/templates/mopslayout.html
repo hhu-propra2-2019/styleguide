@@ -129,7 +129,7 @@
 </div>
 <footer class="footer footer-main">
   <div class="account">
-    <a class="account-link" href="https://keycloak.cs.hhu.de/auth/realms/MOPS/account">
+    <a class="account-link" href="/login" th:href="${account} ? @{https://keycloak.cs.hhu.de/auth/realms/MOPS/account} : @{/login}">
       <img class="account-image" src="../static/img/resized/elvis.jpg"
            th:src="${account} ? (${account.image} ?: @{/img/resized/elvis.jpg}) : @{/img/resized/elvis.jpg}">
       <div class="account-name">
