@@ -12,11 +12,6 @@ public class StyleGuideController {
         return "index";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "redirect:/";
-    }
-
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) throws Exception {
         request.logout();
