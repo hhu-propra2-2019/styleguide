@@ -262,20 +262,12 @@ public class Account {
     bereitgestellt werden. Ausnahme: Ist kein Benutzer angemeldet, muss kein Account instanziiert werden.
   </p>
   <p>
-    Das An- und Abmelden wird durch die Routen <code>/login</code> und <code>/logout</code>
-    ermöglicht. Folgendes Beispiel ist selbsterklärend und benutzt Keycloak (siehe <a
+    Das Abmelden wird durch die Route <code>/logout</code>
+    ermöglicht. Folgendes Beispiel ist selbsterklärend und benutzt intern Keycloak (siehe <a
     href="https://github.com/hhu-propra2/keycloak-demo">Demo</a>):
   </p>
   <pre>
     <code>
-@GetMapping("/login")
-@Secured({"Mops, Mensch"})
-public String login(KeycloakAuthenticationToken token, Model model) {
-    model.addAttribute("account", createAccountFromPrincipal(token));
-    authenticatedAccess.increment();
-    return "redirect:/";
-}
-
 @GetMapping("/logout")
 public String logout(HttpServletRequest request) throws Exception {
     request.logout();
