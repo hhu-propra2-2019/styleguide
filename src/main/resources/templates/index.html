@@ -155,7 +155,7 @@ dependencies {
   </p>
   <ul>
     <li><code>name</code> (Name des Subsystems)</li>
-    <li><code>title</code> Optional: Eigener Name für eine Unterseite, wird im Titel angezeigt</li>
+    <li><code>title</code> (Name für eine Unterseite, der im <code>title</code> angezeigt wird)</li>
     <li><code>headcontent</code> (Fragment mit Links, Scripts, Styles und ggf. anderen Angaben im <code>head</code> der
       Seite)
     </li>
@@ -239,8 +239,10 @@ dependencies {
   <h2 id="account">Account</h2>
   <p>
     Da wir mit Authentifizierung und Autorisierung arbeiten, sollte dem Benutzer die Möglichkeit gegeben werden, sich
-    an- und abzumelden,
-    sowie seine Daten einzusehen. Dies geschieht im Template mit einem DTO. Alles was ihr tun müsst, ist in eurem
+    an- und abzumelden, sowie seine Daten einzusehen.
+  </p>
+  <p>
+    Letzteres geschieht im Template mit einem DTO. Alles was ihr tun müsst, ist in eurem
     Projekt eine Klasse Account anzulegen, die folgendermaßen aussieht:
   </p>
   <pre>
@@ -253,12 +255,29 @@ public class Account {
 
     // Methoden zwecks Übersichtlichkeit weggelassen
 }
-      </code>
-    </pre>
+    </code>
+  </pre>
   <p>
     Bei jedem Request muss dann ein entsprechendes Account Objekt erzeugt werden und im Thymeleaf Model per <code>account</code>
-    bereitgestellt werden.
-    Ausnahme: Ist kein Benutzer angemeldet, muss kein Account instanziiert werden.
+    bereitgestellt werden. Ausnahme: Ist kein Benutzer angemeldet, muss kein Account instanziiert werden.
+  </p>
+  <p>
+    Das Abmelden wird durch die Route <code>/logout</code>
+    ermöglicht. Folgendes Beispiel ist selbsterklärend und benutzt intern Keycloak (siehe <a
+    href="https://github.com/hhu-propra2/keycloak-demo">Demo</a>):
+  </p>
+  <pre>
+    <code>
+@GetMapping("/logout")
+public String logout(HttpServletRequest request) throws Exception {
+    request.logout();
+    return "redirect:/";
+}
+    </code>
+  </pre>
+  <p>
+    Falls man angemeldet ist, kann man durch einen Klick auf seinen Account unten links zu seinen Daten in Keycloak
+    gelangen. Zurück zur Anwendung gelangt man über den Link oben in Keycloak.
   </p>
 
   <h2 id="search">Suche</h2>
