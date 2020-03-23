@@ -4,7 +4,9 @@ import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import mops.styleguide.infrastructure.Account;
 import mops.styleguide.infrastructure.AccountService;
+import mops.styleguide.infrastructure.KeycloakAccountService;
 import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,7 @@ public class StyleGuideController {
     private final Counter publicAccess;
     private final AccountService accountService;
 
+    @Autowired
     public StyleGuideController(MeterRegistry registry, AccountService accountService) {
         authenticatedAccess = registry.counter("access.authenticated");
         publicAccess = registry.counter("access.public");
@@ -26,7 +29,7 @@ public class StyleGuideController {
     }
 
     @ModelAttribute("account")
-    private Account getAccount(KeycloakAuthenticationToken token) {
+    private Account getAccount(KeycloakAuthenticationToken token, KeycloakAccountService accountService) {
         return token != null ? accountService.createAccountFromToken(token) : null;
     }
 
