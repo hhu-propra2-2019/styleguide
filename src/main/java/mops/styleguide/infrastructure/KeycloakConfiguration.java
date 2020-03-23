@@ -1,4 +1,4 @@
-package mops.styleguide.config;
+package mops.styleguide.infrastructure;
 
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.springframework.context.annotation.Bean;

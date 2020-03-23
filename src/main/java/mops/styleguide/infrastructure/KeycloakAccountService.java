@@ -1,4 +1,4 @@
-package mops.styleguide.config;
+package mops.styleguide.infrastructure;
 
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;

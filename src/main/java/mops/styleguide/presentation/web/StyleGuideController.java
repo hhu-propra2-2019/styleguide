@@ -1,9 +1,9 @@
-package mops.styleguide;
+package mops.styleguide.presentation.web;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
-import mops.styleguide.config.Account;
-import mops.styleguide.config.AccountService;
+import mops.styleguide.infrastructure.Account;
+import mops.styleguide.infrastructure.AccountService;
 import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

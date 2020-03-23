@@ -1,4 +1,4 @@
-package mops.styleguide.config;
+package mops.styleguide.infrastructure;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 

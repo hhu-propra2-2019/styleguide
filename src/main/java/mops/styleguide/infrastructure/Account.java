@@ -1,4 +1,4 @@
-package mops.styleguide.config;
+package mops.styleguide.infrastructure;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
