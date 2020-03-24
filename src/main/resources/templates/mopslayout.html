@@ -129,7 +129,7 @@
 </div>
 <footer class="footer footer-main">
   <div class="account">
-    <a class="account-link" href="https://keycloak.cs.hhu.de/auth/realms/MOPS/account" th:href="${account} ? @{https://keycloak.cs.hhu.de/auth/realms/MOPS/account?referrer={referrer}&referrer_uri={referreruri}(referrer=${@environment.getProperty('keycloak.resource')}, referreruri=${#request.requestURL})} : @{https://keycloak.cs.hhu.de/auth/realms/MOPS/protocol/openid-connect/auth?response_type=code&client_id={clientid}&redirect_uri={redirecturi}&login=true(clientid=${@environment.getProperty('keycloak.resource')}, redirecturi=${#request.requestURL})}">
+    <a class="account-link" href="https://keycloak.cs.hhu.de/auth/realms/MOPS/account" th:href="${account} ? @{https://keycloak.cs.hhu.de/auth/realms/MOPS/account?referrer={referrer}&referrer_uri={referreruri}(referrer=${@environment.getProperty('application.name')}, referreruri=${#request.requestURL})} : @{https://keycloak.cs.hhu.de/auth/realms/MOPS/protocol/openid-connect/auth?response_type=code&client_id={clientid}&redirect_uri={redirecturi}&login=true(clientid=${@environment.getProperty('keycloak.resource')}, redirecturi=${#request.requestURL})}">
       <img class="account-image" src="../static/img/resized/elvis.jpg"
            th:src="${account} ? (${account.image} ?: @{/img/resized/elvis.jpg}) : @{/img/resized/elvis.jpg}">
       <div class="account-name">

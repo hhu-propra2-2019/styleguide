@@ -280,6 +280,16 @@ public String logout(HttpServletRequest request) throws Exception {
     gelangen. Zurück zur Anwendung gelangt man über den Link oben in Keycloak.
   </p>
 
+  <h2 id="environment">Umgebungsvariablen</h2>
+  <p>
+    Damit die Integration von Keycloak korrekt funktioniert, ist es erforderlich, der Umgebung folgende Variablen mit
+    den entsprechenden Werten hinzuzufügen.
+  </p>
+  <ul>
+    <li><code>keycloak.resource</code> (Name des Clients)</li>
+    <li><code>application.name</code> (Name des Subsystems)</li>
+  </ul>
+
   <h2 id="search">Suche</h2>
   <p>
     Die Suche ist oben rechts auf der Seite und kann sowohl per Klick, als auch per Parameter in der URL ein- und
